@@ -13,7 +13,7 @@
   "scripts": {
     "bootstrap": "ts-node --project tsconfig.scripts.json scripts/bootstrap.ts",
     "dev": "npm run bootstrap && astro dev --port 3000",
-    "start": "astro dev --verbose",
+    "start": "astro dev",
     "build": "npm run bootstrap && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"

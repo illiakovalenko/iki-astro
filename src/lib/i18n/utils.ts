@@ -1,4 +1,5 @@
 import { SitecoreContextMap } from "../context";
+import locales from '../../../locales.json';
 import config from "@temp/config";
 
 export function useTranslations() {
@@ -28,5 +29,5 @@ export function getRoutePath(url: string, locale: string): string {
 }
 
 export function getLocales() {
-  return ["da-DK", "en"];
+  return locales;
 }
