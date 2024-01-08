@@ -14,7 +14,7 @@
     "bootstrap": "ts-node --project tsconfig.scripts.json scripts/bootstrap.ts",
     "dev": "npm run bootstrap && astro dev --port 3000",
     "start": "astro dev --verbose",
-    "build": "astro check && astro build",
+    "build": "npm run bootstrap && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -41,4 +41,5 @@
     "tsconfig-paths": "^4.2.0"
   }
 }
+
 
