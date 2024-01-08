@@ -12,8 +12,6 @@ const { GraphQLRequestClient, getEdgeProxyContentUrl } = (jss as any).default ||
 export const createGraphQLClientFactory = (config: JssConfig) => {
   let clientConfig: GraphQLRequestClientFactoryConfig;
 
-  console.log('Config file:', config, process.env);
-
   if (config.sitecoreEdgeContextId) {
     clientConfig = {
       endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),

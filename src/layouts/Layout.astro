@@ -15,7 +15,8 @@ export interface Props {
 
 interface RouteFields {
   [key: string]: unknown;
-  pageTitle: Field;
+  pageTitle?: Field;
+  Title?: Field;
 }
 
 const { route } = Astro.props.layoutData.sitecore;
@@ -29,7 +30,7 @@ const fields = route?.fields as RouteFields;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{fields.pageTitle.value.toString() || "Page"}</title>
+    <title>{fields?.Title?.value || fields?.pageTitle?.value.toString() || "Page"}</title>
     <link rel="icon" href="/favicon.ico" />
   </head>
   <body>

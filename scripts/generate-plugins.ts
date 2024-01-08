@@ -41,17 +41,6 @@ const pluginDefinitions: PluginDefinition[] = [
     rootPath: "src/lib/page-props-factory/plugins",
     moduleType: ModuleType.ESM,
   },
-  // {
-  //   distPath: "src/temp/next-config-plugins.js",
-  //   rootPath: "src/lib/next-config/plugins",
-  //   moduleType: ModuleType.CJS,
-  //   relative: true,
-  // },
-  // {
-  //   distPath: "src/temp/extract-path-plugins.ts",
-  //   rootPath: "src/lib/extract-path/plugins",
-  //   moduleType: ModuleType.ESM,
-  // },
   {
     distPath: "src/temp/site-resolver-plugins.ts",
     rootPath: "src/lib/site-resolver/plugins",

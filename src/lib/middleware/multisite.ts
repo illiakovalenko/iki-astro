@@ -27,7 +27,7 @@ export class MultisiteMiddleware extends MiddlewareBase {
   }
 
   /**
-   * Gets the Next.js middleware handler with error handling
+   * Gets the Astro middleware handler with error handling
    * @returns middleware handler
    */
   public getHandler(): (

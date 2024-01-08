@@ -75,7 +75,7 @@ export class PersonalizeMiddleware extends MiddlewareBase {
   constructor(protected config: PersonalizeMiddlewareConfig) {
     super(config);
 
-    // NOTE: we provide native fetch for compatibility on Next.js Edge Runtime
+    // NOTE: we provide native fetch for compatibility on Astro Edge Runtime
     // (underlying default 'cross-fetch' is not currently compatible: https://github.com/lquixada/cross-fetch/issues/78)
     this.personalizeService = new personalizePackage.GraphQLPersonalizeService({
       ...config.edgeConfig,
@@ -84,7 +84,7 @@ export class PersonalizeMiddleware extends MiddlewareBase {
   }
 
   /**
-   * Gets the Next.js middleware handler with error handling
+   * Gets the Astro middleware handler with error handling
    * @returns middleware handler
    */
   public getHandler(): (ctx: MiddlewareContext) => Promise<MiddlewareContext> {

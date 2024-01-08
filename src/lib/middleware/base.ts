@@ -14,8 +14,8 @@ export type MiddlewareBaseConfig = {
   disabled?: (context?: APIContext) => boolean;
   /**
    * Function used to determine if route should be excluded.
-   * By default, files (pathname.includes('.')), Next.js API routes (pathname.startsWith('/api/')), and Sitecore API routes (pathname.startsWith('/sitecore/')) are ignored.
-   * This is an important performance consideration since Next.js Edge middleware runs on every request.
+   * By default, files (pathname.includes('.')), Astro API routes (pathname.startsWith('/api/')), and Sitecore API routes (pathname.startsWith('/sitecore/')) are ignored.
+   * This is an important performance consideration since Astro Edge middleware runs on every request.
    * @param {string} pathname The pathname
    * @returns {boolean} Whether to exclude the route
    */
@@ -41,7 +41,7 @@ export abstract class MiddlewareBase {
 
   protected excludeRoute(pathname: string) {
     return (
-      pathname.startsWith("/api/") || // Ignore Next.js API calls
+      pathname.startsWith("/api/") || // Ignore Astro API calls
       pathname.startsWith("/sitecore/") || // Ignore Sitecore API calls
       (this.config?.excludeRoute && this.config?.excludeRoute(pathname))
     );
@@ -49,7 +49,6 @@ export abstract class MiddlewareBase {
 
   /**
    * Safely extract all headers for debug logging
-   * Necessary to avoid middleware issue https://github.com/vercel/next.js/issues/39765
    * @param {Headers} incomingHeaders Incoming headers
    * @returns Object with headers as key/value pairs
    */
