@@ -12,6 +12,8 @@
 > **_NOTE:_** In order to start use Astro, it's required for JSS to start using **ES modules** by default. This is not supported by JSS yet. Currently there are different workarounds applied for this, like using _import pkg from '@sitecore-jss/sitecore-jss'_ statement.
 
 * [x] Personalization - CloudSDK team also made a POC using SDK and Astro app. In order to enable Astro, there are changes that needed to be done in the SDK: new typeguards, new AstroRequest, AstroResponse types and ES modules support. Currently all the workarounds are applied here in POC app, but all personalization related files are disabled by default, since there is no way to deploy app to Vercel because of that, without making manual changes in __node_modules\@sitecore-cloudsdk\personalize\package.json__, apply the following changes:
+
+  ```json
   "exports": {
     "./server": {
       "import": "./server.cjs",
@@ -24,6 +26,7 @@
       "types": "./browser.d.ts"
     }
   }
+  ```
 
 * [x] Multisite
 * [x] i18n
